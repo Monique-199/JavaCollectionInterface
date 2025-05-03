@@ -15,5 +15,7 @@ public class Main {
         train.printList();
         train.deleteAtIndex(1);
         train.printList();
+        train.reverse();
+        train.printList();
     }
 }
