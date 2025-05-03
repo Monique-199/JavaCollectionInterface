@@ -50,6 +50,24 @@ public class LinkedList {
             return;
         }
         newNode.next=current.next;
-        
+        current.next=newNode;
+    }
+    public void deleteByValue(int value){
+        if(head==null){
+            return;
+        }
+        //if the value we want to delete is at the head
+        if(head.data==value){
+            head=head.next;
+            return;
+        }
+        Node current=head;
+        while(current!=null){
+            if(current.next.data==value){
+                current.next=current.next.next;
+                return;
+            }
+            current=current.next;
+        }
     }
 }

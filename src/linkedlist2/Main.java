@@ -8,5 +8,9 @@ public class Main {
         train.add(76);
         train.add(26);
         train.printList();
+        train.insertAt(1,99);
+        train.printList();
+        train.deleteByValue(76);
+        train.printList();
     }
 }
