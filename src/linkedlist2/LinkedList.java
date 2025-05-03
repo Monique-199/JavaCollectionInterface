@@ -70,4 +70,31 @@ public class LinkedList {
             current=current.next;
         }
     }
+    public void deleteAtIndex(int index){
+        if(head==null){
+            System.out.println("List is empty");
+            return;
+        }
+        //deleting at first index
+        if(index==0){
+            head=head.next;
+            return;
+        }
+        //Traversing to the given index
+        Node current =head;
+        for(int i=0; i<index-1; i++){
+            if(current==null || current.next==null){
+                System.out.println("Index out of bounds.");
+                return;
+            }
+            current=current.next;
+        }
+        if(current.next==null){
+            System.out.println("Index out of bounds");
+            return;
+        }
+        current.next=current.next.next;
+
+
+    }
 }
