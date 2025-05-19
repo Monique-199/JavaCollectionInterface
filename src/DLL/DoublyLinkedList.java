@@ -71,4 +71,44 @@ public class DoublyLinkedList {//The train
             temp=temp.next;
 }
         return null;}
+    void deleteAt(int index){
+        if(index<0)
+            return;
+        Node temp=head;
+        int count =0;
+        while(temp !=null){
+            if(count==index){
+                delete(temp);
+                return;
+            }
+            temp = temp.next;
+            count++;
+        }
+    }
+    void insertAt(int index, int data){
+        Node newNode = new Node(data);
+        if (index <= 0 || head == null) {
+            newNode.next=head;
+            if (head != null) head.prev = newNode;
+            head = newNode;
+            if (tail == null) tail = newNode;
+            return;
+        }
+        Node temp = head;
+        int count = 0;
+        while (temp != null && count < index - 1) {
+            temp = temp.next;
+            count++;
+        }
+
+        if (temp == null || temp.next == null) {
+            append(data);
+            return;
+        }
+
+        newNode.next = temp.next;
+        newNode.prev = temp;
+        temp.next.prev = newNode;
+        temp.next = newNode;
+    }
 }
