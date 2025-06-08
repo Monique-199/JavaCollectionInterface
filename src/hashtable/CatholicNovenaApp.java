@@ -16,7 +16,7 @@ public class CatholicNovenaApp {
         novenaHashTable.put("Day7", "Peace");
         novenaHashTable.put("Day8", "Happiness");
         novenaHashTable.put("Day9", "Financial freedom");
-        // 3. Retrieve a novena petition 
+        // 3. Retrieve a novena petition
         String petition= novenaHashTable.get("Day1");
         System.out.println("Novena for day 1 is: "+petition);
         //4. update a petition
